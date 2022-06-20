@@ -27,4 +27,10 @@ public class FoodServices {
 	public Food saveFood(Food food) {
 		return foodRepository.save(food);
 	}
+	
+	public Food updateFood(Long id, Food newFood) throws Exception {
+		Food food = getFoodById(id);
+		food.setName(newFood.getName());
+		return foodRepository.save(food);
+	}
 }

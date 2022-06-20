@@ -52,6 +52,15 @@ public class FoodController {
 		} catch (Exception e) {
 			return ResponseEntity.notFound().build();
 		}
+	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity<?> deleteFood(@PathVariable Long id) {
+		try {
+			foodServices.deleteFoodById(id);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
 	}
 }

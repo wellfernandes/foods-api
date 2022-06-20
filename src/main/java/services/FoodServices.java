@@ -20,4 +20,7 @@ public class FoodServices {
 		return foodRepository.findAll();
 	}
 
+	public Food getFoodById(Long id) throws Exception {
+		return foodRepository.findById(id).orElseThrow(() -> new Exception("Food not found!"));
+	}
 }

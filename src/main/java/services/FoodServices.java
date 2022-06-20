@@ -33,4 +33,9 @@ public class FoodServices {
 		food.setName(newFood.getName());
 		return foodRepository.save(food);
 	}
+	
+	public void deleteFoodById(Long id) throws Exception {
+		Food food = getFoodById(id);
+		foodRepository.delete(food);
+	}
 }
